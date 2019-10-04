@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@absinthe/socket-apollo-link": "^0.1.11",
+    "@absinthe/socket-apollo-link": "^0.2.1",
     "@babel/runtime": "^7.1.2",
     "@jumpn/utils-graphql": "^0.5.3",
     "@types/graphql": "^14.0.2",
@@ -33,6 +33,7 @@
     "graphql-tag": "^2.10.0",
     "lodash": "^4.17.11",
     "lodash.get": "^4.4.2",
+    "phoenix": "^1.4.10",
     "react": "16.5.0",
     "react-apollo": "^2.2.4",
     "react-native": "0.57.1",
