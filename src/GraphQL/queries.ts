@@ -6,7 +6,6 @@ export const getThreadsByCategory = gql`
       threads {
         id
         title
-        slug
         insertedAt
       }
     }
@@ -18,7 +17,6 @@ export const getThread = gql`
     thread(id: $id) {
       id
       title
-      slug
       posts {
         id
         body
@@ -35,7 +33,6 @@ export const getCategories = gql`
       entries {
         id
         title
-        slug
         insertedAt
       }
     }
