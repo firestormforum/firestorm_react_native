@@ -1,4 +1,4 @@
-package com.forum;
+package com.firestormforum.reactnative;
 
 import android.app.Application;
 
