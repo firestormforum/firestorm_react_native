@@ -6,9 +6,14 @@ import { onError } from 'apollo-link-error'
 import { HttpLink } from 'apollo-link-http'
 import { withClientState } from 'apollo-link-state'
 import { WebSocketLink } from 'apollo-link-ws'
-import absintheSocketLink from './absintheSocketLink'
+import * as AbsintheSocket from '@absinthe/socket'
+import { createAbsintheSocketLink } from '@absinthe/socket-apollo-link'
+import { Socket as PhoenixSocket } from 'phoenix'
 import Resolvers from './Resolvers'
 import Config from 'react-native-config'
+
+const WEBSOCKET_API_URL = "ws://frayed-capital-gourami.gigalixirapp.com/socket"
+const GRAPHQL_API_URL = "https://frayed-capital-gourami.gigalixirapp.com/graphql"
 
 type ContextType = {
   token?: String
@@ -41,16 +46,20 @@ const inner = function (operation: any, forward: any) {
 const middlewareLink = new ApolloLink(inner)
 
 const javaScriptWebsocketLink = new WebSocketLink({
-  uri: Config.WEBSOCKET_API_URL,
+  uri: WEBSOCKET_API_URL,
   options: {
     reconnect: true
   }
 })
 
 const httpLink = new HttpLink({
-  uri: Config.GRAPHQL_API_URL,
+  uri: GRAPHQL_API_URL,
   credentials: 'same-origin'
 })
+
+const absintheSocketLink = createAbsintheSocketLink(AbsintheSocket.create(
+  new PhoenixSocket(WEBSOCKET_API_URL)
+))
 
 const subscriptionsLink = Config.BACKEND === 'js' ? javaScriptWebsocketLink : absintheSocketLink
 
