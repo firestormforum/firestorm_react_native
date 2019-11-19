@@ -17,6 +17,7 @@ export default class PostsScreen extends React.Component<Props> {
   render () {
     const threadId = get(this.props, 'navigation.state.params.threadId')
     const threadTitle = get(this.props, 'navigation.state.params.threadTitle')
+
     return (
       <Query query={Queries.getPostsByThread} variables={{ threadId }}>
         {({ data, refetch }) => {
