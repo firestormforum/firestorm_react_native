@@ -75,7 +75,7 @@ export default class CreatePostScreen extends React.Component<Props> {
                   indicatorStyle={{ height: 2, backgroundColor: 'white' }}
                 />
               }
-              renderScene={({ route, focused }) => {
+              renderScene={({ route }) => {
                 switch (route.key) {
                   case 'create':
                     return this.renderCreateFragment({
