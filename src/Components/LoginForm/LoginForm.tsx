@@ -19,18 +19,20 @@ export default class LoginForm extends React.PureComponent<Props> {
       <Fragment>
         <View style={{ height: '40%', padding: 50 }}>
           <Image
-            source={{ uri: 'https://raw.githubusercontent.com/dailydrip/firestorm/master/assets/static/images/firestorm-logo.png' }}
+            source={require('../../Images/firestorm-logo.png')}
             resizeMode='contain'
             style={{ height: '100%', width: '100%' }} />
         </View>
 
         <FormLabel>E-mail</FormLabel>
-        <FormInput autoCapitalize='none' value={email} onChangeText={email => setEmail(email)} />
+        <FormInput containerStyle={{ backgroundColor: '#e5e5e5' }} autoCapitalize='none' value={email} onChangeText={email => setEmail(email)} />
 
         <FormLabel>Password</FormLabel>
-        <FormInput value={password} secureTextEntry onChangeText={password => setPassword(password)} />
+        <FormInput containerStyle={{ backgroundColor: '#e5e5e5' }} value={password} secureTextEntry onChangeText={password => setPassword(password)} />
 
-        <Button backgroundColor={Colors.action} onPress={() => authenticate()} large style={{ marginTop: 30 }} title='Login' />
+        <View style={{ marginTop: '5%' }}>
+          <Button backgroundColor={Colors.action} onPress={() => authenticate()} large title='Login' />
+        </View>
       </Fragment>
     )
   }

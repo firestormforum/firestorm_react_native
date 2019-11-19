@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "tsc --watch",
+    "dev": "cp -R src/Images build/Images && tsc --watch",
     "apollo": "apollo",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "generate-types": "./node_modules/.bin/gql-gen --schema=http://localhost:4000 --template graphql-codegen-typescript-template --out=./src/GraphQL/",
