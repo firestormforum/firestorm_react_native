@@ -4,7 +4,7 @@ import { Header, Icon } from 'react-native-elements'
 import * as NavigatorService from '../../Navigation/NavigatorService'
 import Colors from '../../Config/Colors'
 
-type Props = { text: String; allowGoBack?: boolean; rightComponent?: any }
+type Props = { text?: any; allowGoBack?: boolean; rightComponent?: any }
 
 const ArrowBack = () => (
   <TouchableOpacity onPress={NavigatorService.goBack}>

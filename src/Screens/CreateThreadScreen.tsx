@@ -60,7 +60,7 @@ export default class CreatePostScreen extends React.Component<Props> {
           onCompleted={(data) => {
             PrettierLog.log('data for on completed', { data })
             const thread = get(data, 'createThread', {})
-            refetch().then(() => NavigatorService.navigate('Posts', { threadId: thread.id, threadName: thread.title }))
+            refetch().then(() => NavigatorService.navigate('Posts', { threadId: thread.id, threadTitle: thread.title }))
           }}
         >
           {createThread => {
