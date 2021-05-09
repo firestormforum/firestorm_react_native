@@ -31,7 +31,7 @@
     "graphql": "^14.0.2",
     "graphql-code-generator": "^0.12.6",
     "graphql-tag": "^2.10.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "lodash.get": "^4.4.2",
     "phoenix": "^1.4.10",
     "react": "16.8.3",
