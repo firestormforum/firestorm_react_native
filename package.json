@@ -40,7 +40,7 @@
     "react-native-config": "^0.11.5",
     "react-native-elements": "^0.19.1",
     "react-native-gesture-handler": "^1.5.0",
-    "react-native-reanimated": "^1.4.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-simple-markdown": "^1.1.0",
     "react-native-tab-view": "^2.10.2",
     "react-native-vector-icons": "^6.0.2",
